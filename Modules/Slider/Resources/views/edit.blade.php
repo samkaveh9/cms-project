@@ -7,9 +7,9 @@
                 <form action="{{ route('slider.update', $slider->id) }}" class="padding-30" method="post" enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
-                    <input type="text" class="text" name="title" placeholder="عنوان اسلاید" value="{{ $slider->title }}">
+                    <input type="text" class="text" name="title" placeholder="عنوان اسلاید (اختیاری)" value="{{ $slider->title }}">
 {{--                    <input type="text" class="text text-left " value="{{ $slider->status }}" placeholder="لینک اسلاید">--}}
-                    <select name="status">
+                    <select name="status" class="text">
                         <option value="">یک مورد را انتخاب کنید</option>
                         <option value="active" {{ $slider->stauts == 'active' ? 'selected' : '' }}>فعال</option>
                         <option value="inactive" {{ $slider->stauts == 'inactive' ? 'selected' : '' }}>غیر فعال</option>

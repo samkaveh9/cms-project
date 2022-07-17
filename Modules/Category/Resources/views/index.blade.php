@@ -13,6 +13,7 @@
                             <th>شناسه</th>
                             <th>نام دسته بندی</th>
                             <th>دسته پدر</th>
+                            <th>تاریخ ایجاد</th>
                             <th>عملیات</th>
                         </tr>
                         </thead>
@@ -22,15 +23,12 @@
                                 <td>{{ $category->id }}</td>
                                 <td>{{ $category->name }}</td>
                                 <td>{{ $category->parent }}</td>
+                                <td>{{ \Carbon\Carbon::parse($category->created_at)->diffForHumans() }}</td>
                                 <td>
-                                    <a class="item-delete mlg-15" href="{{ route('categories.destroy', $category->id) }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                    </a>
-
-                                    <form id="logout-form" action="{{ route('categories.destroy', $category->id) }}" method="POST" class="d-none">
+                                    <form id="logout-form" action="{{ route('categories.destroy', $category->id) }}" method="POST" class="d-contents">
                                         @csrf
                                         @method('DELETE')
+                                        <button type="submit" class="item-delete mlg-15"></button>
                                     </form>
 
                                     <a href="{{ route('categories.edit', $category->id) }}" class="item-edit "
@@ -41,6 +39,7 @@
                         </tbody>
                     </table>
                 </div>
+                {{ $categories->links() }}
             </div>
             <div class="col-4 bg-white">
                 <p class="box__title">ایجاد دسته بندی جدید</p>
@@ -63,7 +62,7 @@
                         </span>
                     @enderror
                     <p class="box__title margin-bottom-15">انتخاب دسته پدر</p>
-                    <select name="parent_id" id="parent_id">
+                    <select name="parent_id" id="parent_id" class="text">
                         <option value="">ندارد</option>
                         @foreach($categories as $item)
                             <option value="{{ $item->id }}">{{ $item->name }}</option>

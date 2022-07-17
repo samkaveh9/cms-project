@@ -3,9 +3,10 @@
     "Dashboard": true,
     "Category": true,
     "Permission": true,
-    "Course": true,
     "Article": true,
     "Slider": true,
     "Banner": true,
-    "Media": true
+    "Product": true,
+    "Home": true,
+    "Payment": true
 }

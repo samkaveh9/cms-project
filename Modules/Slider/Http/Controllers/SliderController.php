@@ -15,7 +15,7 @@ class SliderController extends Controller
      */
     public function index()
     {
-        return view('slider::index', ['sliders' => Slider::all()]);
+        return view('slider::index', ['sliders' => Slider::query()->paginate(10)]);
     }
 
     /**

@@ -16,7 +16,7 @@
 
     <ul>
         <li class="item-li i-dashboard is-active"><a href="{{ route('dashboard.index') }}">پیشخوان</a></li>
-        <li class="item-li i-courses "><a href="{{ route('courses.index') }}">دوره ها</a></li>
+        <li class="item-li i-my__purchases "><a href="{{ route('products.index') }}">محصولات</a></li>
         <li class="item-li i-users"><a href="{{ route('users.index') }}"> کاربران</a></li>
         <li class="item-li i-categories"><a href="{{ route('categories.index') }}">دسته بندی ها</a></li>
         <li class="item-li i-user__permission"><a href="{{ route('permissions.index') }}">نقش های کاربری</a></li>

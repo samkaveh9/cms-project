@@ -16,7 +16,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        return view('category::index', ['categories' => Category::all()]);
+        return view('category::index', ['categories' => Category::query()->paginate(10)]);
     }
 
     /**
@@ -58,7 +58,6 @@ class CategoryController extends Controller
      */
     public function edit(Category $category)
     {
-        alert()->info('Info Message', 'Optional Title');
         $categories = Category::all();
         return view('category::edit', ['category' => $category, 'categories' => $categories]);
     }

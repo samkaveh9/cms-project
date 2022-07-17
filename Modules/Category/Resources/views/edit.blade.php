@@ -14,13 +14,13 @@
                     </span>
                     @enderror
                     <p class="box__title margin-bottom-15"> دسته پدر</p>
-                    <select name="parent_id" id="parent_id">
+                    <select name="parent_id" id="parent_id" class="text">
                         <option value="">ندارد</option>
                         @foreach($categories as $item)
                             <option value="{{ $item->id }}" {{ $category->parent_id == $item->id ? 'selected' : '' }}>{{ $item->name }}</option>
                         @endforeach
                     </select>
-                    <button class="btn btn-webamooz_net" type="submit">ویرایش</button>
+                    <button class="btn btn-webamooz_net mt-2" type="submit">ویرایش</button>
                 </form>
             </div>
         </div>

@@ -16,8 +16,7 @@
                     <th class="p-r-90">شناسه</th>
                     <th>عنوان</th>
                     <th>تصویر</th>
-{{--                    <th>لینک</th>--}}
-{{--                    <th>تاریخ ایجاد</th>--}}
+                    <th>تاریخ ایجاد</th>
                     <th>عملیات</th>
                 </tr>
                 </thead>
@@ -25,14 +24,10 @@
                     @foreach($sliders as $slider)
                         <tr role="row" class="">
                             <td>{{ $slider->id }}</td>
-                            <td>{{ $slider->title }}</td>
+                            <td>{{ $slider->title ?? 'بدون عنوان' }}</td>
                             <td><img class="img__slideshow" src="/storage/{{ $slider->slide }}" width="130" height="80"></td>
-                            {{--                    <td><a href="">webamooz.net</a></td>--}}
-                            {{--                    <td>1399/11/11</td>--}}
+                            <td>{{ \Carbon\Carbon::parse($slider->created_at)->diffForHumans() }}</td>
                             <td>
-                                <a href="" class="item-reject mlg-15" title="رد"></a>
-                                <a href="" target="_blank" class="item-eye mlg-15" title="مشاهده"></a>
-                                <a href="" class="item-confirm mlg-15" title="تایید"></a>
                                 <a href="{{ route('slider.edit', $slider->id) }}" class="item-edit" title="ویرایش"></a>
                                 <form action="{{ route('slider.destroy', $slider->id) }}" method="post" class="d-inline-block">
                                     @csrf

@@ -43,6 +43,9 @@ a, span {
     display: inline-block;
 }
 
+select{
+    font-family: irs;
+}
 
 .d-none {
     display: none;
@@ -486,6 +489,10 @@ textarea {
 
 .mrg-0 {
     margin-right: 0 !important;
+}
+
+.text-white{
+    color: white !important;
 }
 
 .text-success {
@@ -1092,9 +1099,10 @@ textarea {
     display: none;
 }
 
-select {
-    display: none;
-}
+/*select {*/
+/*    display: none;*/
+/*}*/
+
 .dropdown-select {
     margin-bottom: 15px;
     background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0) 100%);
@@ -1883,7 +1891,7 @@ span.tagRemove:hover {
 }
 
 .d-contents{
-    display: contents;
+    display: contents !important;
 }
 
 .mt-0 {

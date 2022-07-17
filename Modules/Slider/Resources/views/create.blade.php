@@ -6,12 +6,12 @@
             <div class="col-12">
                 <form action="{{ route('slider.store') }}" class="padding-30" method="post" enctype="multipart/form-data">
                     @csrf
-                    <input type="text" class="text" name="title" placeholder="عنوان اسلاید">
+                    <input type="text" class="text" name="title" placeholder="عنوان اسلاید (اختیاری)" >
                     @error('title')
                     <span>{{ $message }}</span>
                     @enderror
 {{--                    <input type="text" class="text text-left " placeholder="لینک اسلاید">--}}
-                    <select name="status">
+                    <select name="status" class="text">
                         <option value="">یک مورد را انتخاب کنید</option>
                         <option value="active">فعال</option>
                         <option value="inactive">غیر فعال</option>
